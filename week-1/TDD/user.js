@@ -1,10 +1,10 @@
 class User {
-    constructor(username, password, email, age) {
+    constructor(username, password, email, age, favTech) {
         this.username = username;
         this.password = password;
         this.email = email;
         this.age = age;
-        this.favTech = [];
+        this.favTech = favTech;
     }
 
     checkAge() {
@@ -26,13 +26,19 @@ class User {
 
     validateEmail() {
         let domain = this.email.split('@')[1];
-        if(domain == 'gmail.com') {
+        if(domain === 'gmail.com') {
             return true;
         } else {
             return false;
         }
     }
 }
+
+// Tests that our datatypes are correct
+
+// Tests to make sure that our methods are working
+
+module.exports = User;
 
 // Test
 let ikinney = new User("ikinney", "iHatePasswords1", "ikinney51@gmail.com", 23);
