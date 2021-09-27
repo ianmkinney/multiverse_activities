@@ -1,49 +1,43 @@
 class User {
-    constructor(username, password, email, age, favTech) {
-        this.username = username;
-        this.password = password;
-        this.email = email;
-        this.age = age;
-        this.favTech = favTech;
+    constructor(username, password, email, age) {
+        this.username = username
+        this.password = password
+        this.email = email
+        this.age = age
+        this.favoriteTech = []
     }
 
     checkAge() {
-        if(this.age >= 18 && this.age < 75) {
-            return("Age Acceptable");
-        } else if(this.age < 18) {
-            return("Too young!");
-        } else if(this.age >= 75) {
-            return("Too old!");
+        let age = this.age;
+
+        if (age >= 18 && age < 75) {
+            return true;
+        } else {
+            return false;
         }
+        //ternary operator
+        // (age >= 18 && age < 75) ? true : false
     }
 
-    // ternary operator
-    // (age >= 18 && age < 75) ? true : false;
-
-    addTech(tech) {
-        this.favTech.push(tech)
+    addTech(technology) {
+        this.favoriteTech.push(technology)
     }
 
     validateEmail() {
         let domain = this.email.split('@')[1];
+        // triple equals for EXACT value, datatype verified
         if(domain === 'gmail.com') {
             return true;
         } else {
             return false;
         }
     }
+
 }
 
-// Tests that our datatypes are correct
+//Test that our datatypes are correct 
 
-// Tests to make sure that our methods are working
+//Tests to make sure that our methods are returning the correct values
 
-module.exports = User;
 
-// Test
-let ikinney = new User("ikinney", "iHatePasswords1", "ikinney51@gmail.com", 23);
-ikinney.addTech("sqlite");
-ikinney.addTech("iPhone");
-console.log(ikinney);
-console.log(ikinney.checkAge())
-console.log(ikinney.validateEmail())
+module.exports = User
