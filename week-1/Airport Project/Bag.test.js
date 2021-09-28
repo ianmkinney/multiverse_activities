@@ -1,5 +1,6 @@
 const Bag = require('./Bag')
 
+/** Testing suite for bag class. */
 describe('Bag class', () => {
     //bag has weight
     test('bag has weight', () => {
